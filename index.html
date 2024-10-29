@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>MaruMaru!</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="marumaru.jpg" alt="Marumaru" class="profile-photo"> <!-- Add your photo here -->
+            <p>Hello, welcome to Marumaru's portfolio! This is a sanrio character.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Pillow Fort</h3>
+                <p>Built a pillow fort with Hello Kitty.</p>
+                <a href="link-to-project-1">View Project</a>
+            </div>
+            <div class="project">
+                <h3>Baking Castle</h3>
+                <p>Baked together with Keroppi, creating many frosting houses.</p>
+                <a href="link-to-project-2">View Project</a>
+                <section id="slideshow">
+                    <h2>Image Slideshow</h2>
+                    <div class="slideshow-container">
+                        <img src="sumikkogurashi.jpg" class="slide" alt="Image 1">
+                        <img src="sumikkogurashi1.jpg" class="slide" alt="Image 2">
+                        <img src="sumikkogurashi2.jpg" class="slide" alt="Image 3">
+                        <img src="halloween.jpg" class="slide" alt="Image 4">
+                        <!-- Add more images as needed -->
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                    </div>
+                </section>
+        <script>
+                    let slideIndex = 0;
+                    showSlides();
+                
+                    function showSlides() {
+                        let slides = document.getElementsByClassName("slide");
+                        for (let i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  
+                        }
+                        slideIndex++;
+                        if (slideIndex > slides.length) {slideIndex = 1}    
+                        slides[slideIndex - 1].style.display = "block";  
+                        setTimeout(showSlides, 3000); // Change image every 3 seconds
+                    }
+                
+                    function changeSlide(n) {
+                        slideIndex += n;
+                        if (slideIndex > slides.length) {slideIndex = 1}    
+                        if (slideIndex < 1) {slideIndex = slides.length}
+                        showSlides();
+                    }
+                </script>
+                
+</body>
